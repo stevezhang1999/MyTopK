@@ -1,0 +1,10 @@
+https://www.example.com/brother
+https://www.example.edu/
+http://balance.example.net/airplane
+https://www.example.com/brother
+https://www.example.edu/
+http://balance.example.net/airplane
+https://www.example.com/brother
+https://www.example.edu/
+http://balance.example.net/airplane
+https://www.example.com/breath.html?account=achiever

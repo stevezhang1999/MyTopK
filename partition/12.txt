@@ -1,0 +1,13 @@
+http://www.example.org/box/addition.php#airport
+https://www.example.org/
+http://www.example.com/brick/bead.html
+http://www.example.org/box/addition.php#airport
+https://www.example.org/
+http://www.example.com/brick/bead.html
+http://www.example.org/box/addition.php#airport
+https://www.example.org/
+http://www.example.com/brick/bead.html
+http://www.example.com/?authority=border&ants=babies#account
+http://www.example.net/ball
+https://www.example.net/?balance=argument&agreement=base
+http://example.net/?action=ants
