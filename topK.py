@@ -60,8 +60,7 @@ class MinHeap():
     insert( (key, val) ), compare by val
     remove(position), index from 1.
     """
-    def __init__(self, size):
-        self.max_size = size
+    def __init__(self):
         self.size = 0
         self.start=1
         self.end=0
@@ -162,6 +161,10 @@ class RestrictedMinHeap(MinHeap):
         [1, 2, 3], insert(10) -> [2, 10, 3]
      
     """
+    def __init__(self, max_size):
+        self.max_size = max_size
+        super(RestrictedMinHeap, self).__init__()
+
     def restricted_insert(self, ele):
         (url, freq) = ele
         if self.size < self.max_size:
