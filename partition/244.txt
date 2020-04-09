@@ -1,0 +1,4 @@
+http://www.example.net/boy.php
+http://www.example.net/boy.php
+http://www.example.net/boy.php
+http://www.example.com/#bat

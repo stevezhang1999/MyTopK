@@ -1,9 +1,0 @@
-http://basin.example.com/
-https://www.example.com/air?arithmetic=believe&branch=anger#advice
-http://www.example.com/bomb?approval=alarm&aftermath=addition
-http://basin.example.com/
-https://www.example.com/air?arithmetic=believe&branch=anger#advice
-http://www.example.com/bomb?approval=alarm&aftermath=addition
-http://basin.example.com/
-https://www.example.com/air?arithmetic=believe&branch=anger#advice
-http://www.example.com/bomb?approval=alarm&aftermath=addition

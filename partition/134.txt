@@ -1,0 +1,6 @@
+https://www.example.com/air?arithmetic=believe&branch=anger#advice
+http://www.example.com/babies/art.php
+https://www.example.com/air?arithmetic=believe&branch=anger#advice
+http://www.example.com/babies/art.php
+https://www.example.com/air?arithmetic=believe&branch=anger#advice
+http://www.example.com/babies/art.php

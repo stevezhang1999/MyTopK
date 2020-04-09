@@ -1,0 +1,10 @@
+http://www.example.com/babies/art.php 3
+https://www.example.org/ 3
+http://www.example.com/ 5
+http://www.example.org/box/addition.php#airport 3
+https://boundary.example.org/ 3
+http://example.com/ 8
+www.google.com 8
+http://basin.example.com/ 3
+https://www.example.com/ 10
+https://www.example.com/beef/birth 3

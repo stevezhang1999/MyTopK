@@ -3,7 +3,7 @@ import hashlib
 import os
 from collections import OrderedDict
 
-def findMostFrequent100(filename, k):
+def findTopK(filename, k):
     # 1. hash partioning
 
     input_file = open(filename, 'r')
@@ -47,16 +47,18 @@ def findMostFrequent100(filename, k):
             freq_file.write(str(val))
             freq_file.write('\n')
 
-
-
     # 3. find TopK, using heap
     # get names
     freq_list = list(os.walk('./freq/'))[0][2]
+
     heap_find_files(freq_list, k)
 
 class MinHeap():
     """
     standard min heap allow insert, remove.
+    each element is a pair of (key, val)
+    insert( (key, val) ), compare by val
+    remove(position), index from 1.
     """
     def __init__(self, size):
         self.max_size = size
@@ -120,8 +122,7 @@ class MinHeap():
                     rc = lc + 1
                 # is a heap
                 else:
-                    break
-                
+                    break      
 
     def _sift_up_(self, idx):
         cur = idx
@@ -138,68 +139,56 @@ class MinHeap():
             else:
                 break
 
+class RestrictedMinHeap(MinHeap):
+    """
 
-# class RestrictedMinHeap():
-#     """
-#     a min heap with limited size, "restricted".
-#     will insert element ONLY when the new element is not smaller than the entire heap.
-#     ONLY designed for dict.
-#     h = RestrictedMinHeap(size)
+    h = RestrictedMinHeap(max_size)
 
-#     methods:
-#     replace_head(ele): replace the head with new element and adjust the heap.
-#     insert(ele): insert element to the heap.
-#       - if not full, insert and adjust the heap
-#       - if full and new element larger than the top, replace the top.
-#       - if full and new element not larger than the top, do nothing
+    a min heap with limited size, "restricted".
+    when heap is full, will insert element ONLY when the new element is not smaller than the entire heap, 
+    and replace the top, then re-heapify.
+
+    method:
+    restricted_insert(ele): insert element to the heap.
+      args: a tuple, (key, val). Insertion comparison by val.
+
+      - if not full, insert and adjust the heap
+      - if full and new element larger than the top, replace the top.
+      - if full and new element not larger than the top, do nothing
+    
+      e.g. max_size=3
+        [1, 2], insert(3) -> [1, 2, 3]
+        [1, 2, 3], insert(0) -> [1, 2, 3]
+        [1, 2, 3], insert(10) -> [2, 10, 3]
      
-#     """
-#     def __init__(self, size):
-#         self.max_size = size
-#         self.size = 0
-#         self.start=1
-#         self.end=0
-#         # for convenience, the first slot of the array is not used.
-#         self.data = [0] * (size + 1)
-#     def insert(self, ele):
-#         if self.size < self.max_size:
-#             self.data.append(ele)
-#             self.size += 1
-#             self.end += 1
-#             # adjust heap
-#             cur = self.end
-#             while(cur>1):
-#                 parent = self._parent_(cur)
-#                 # need to adjust, continue 
-#                 if(self.data[parent]>self.data[cur]):
-#                     self.data[parent], self.data[cur] = self.data[cur], self.data[parent]
-#                     cur = parent
-#                 # don't need to adjust
-#                 else:
-#                     break
-#         elif 
-
-
-#     def _parent_(self, idx):
-#         return idx // 2
+    """
+    def restricted_insert(self, ele):
+        (url, freq) = ele
+        if self.size < self.max_size:
+            self.insert(ele)
+        elif freq > self.data[1][1]:
+            self.data[1] = ele
+            self._sift_down_(1)
 
 
 
 def heap_find_files(file_list, k):
-    heap = MinHeap(k)
+    """
+    find topK in file_list, write result to ./res.txt
+    args:
+        file_list: a list containing file names
+        k: top k we need
+    """
+    heap = RestrictedMinHeap(k)
     os.chdir('./freq')
     for filename in file_list:
         f = open(filename, 'r')
         for line in f:
             url, freq = line.strip('\n').split(' ')
             freq = int(freq)
-            print(url, freq)
-            if heap.size < heap.max_size:
-                heap.insert((url, freq))
-            elif freq > heap.data[1][1]:
-                heap.data[1] = (url, freq)
-                heap._sift_down_(1)
+            heap.restricted_insert((url, freq))  
         f.close()
+
     os.chdir('..')
     out_file = open('./res.txt', 'a')
     for i in range(1, heap.size+1):
@@ -208,11 +197,7 @@ def heap_find_files(file_list, k):
         out_file.write(str(heap.data[i][1]))
         out_file.write('\n')
     out_file.close()
-    
-
-
-
 
 if __name__ == "__main__":
     print('hello')
-    findMostFrequent100('input.txt', 10)
+    findTopK('input.txt', 10)

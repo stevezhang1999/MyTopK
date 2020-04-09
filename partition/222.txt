@@ -1,0 +1,3 @@
+http://www.example.com/bomb?approval=alarm&aftermath=addition
+http://www.example.com/bomb?approval=alarm&aftermath=addition
+http://www.example.com/bomb?approval=alarm&aftermath=addition

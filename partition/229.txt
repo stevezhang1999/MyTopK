@@ -1,0 +1,4 @@
+http://example.net/boot?balance=brother
+http://example.net/boot?balance=brother
+http://example.net/boot?balance=brother
+https://example.org/

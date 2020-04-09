@@ -1,14 +1,1 @@
-https://www.example.net/?bead=arch
-http://example.com/
-https://www.example.net/?bead=arch
-http://example.com/
-https://www.example.net/?bead=arch
-http://example.com/
-http://example.com/
-http://example.com/
-http://example.com/
-https://example.com/?blow=anger
-http://example.com/
-https://www.example.edu/?bell=boot
-https://www.example.org/angle/box.php
-http://example.com/
+http://example.com/authority/belief.html

@@ -1,0 +1,2 @@
+https://example.com/addition/achiever.aspx 1
+https://example.org/?bomb=bottle&bead=brick 1

@@ -1,0 +1,3 @@
+http://www.example.com/angle?bell=beginner#behavior
+http://www.example.com/angle?bell=beginner#behavior
+http://www.example.com/angle?bell=beginner#behavior
